@@ -17,7 +17,8 @@ def getData(content):
                 lines.append(line)
 
     text = " ".join(lines)
-    text = re.sub(r'\,\.', " ", text)
+    text = re.sub(r'\,', "", text)
+    text = re.sub(r'\.', " ", text)
     text = re.sub(r'[\t\"]', "", text).lower()
     title = soup.find("h1").get_text()
     words = text.split(" ")
